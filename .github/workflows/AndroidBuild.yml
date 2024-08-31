@@ -7,30 +7,30 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.7
-
-      - name: Setup Java JDK
-        uses: actions/setup-java@v4.2.2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
-      - name: Grant execute permissions for gradlew
-        run: chmod +x gradlew
-
-      - name: Build with gradle
-        run: ./gradlew build
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.3.6
-        with:
-          name: GithubActions.apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4.1.7
+#
+#      - name: Setup Java JDK
+#        uses: actions/setup-java@v4.2.2
+#        with:
+#          java-version: '17'
+#          distribution: 'adopt'
+#
+#      - name: Grant execute permissions for gradlew
+#        run: chmod +x gradlew
+#
+#      - name: Build with gradle
+#        run: ./gradlew build
+#
+#      - name: Upload a Build Artifact
+#        uses: actions/upload-artifact@v4.3.6
+#        with:
+#          name: GithubActions.apk
+#          path: app/build/outputs/apk/debug/app-debug.apk
 
   lint:
     runs-on: ubuntu-latest
