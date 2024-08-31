@@ -1,4 +1,4 @@
-name : AndroidBuild
+name: AndroidBuild
 
 on:
   pull_request:
@@ -46,6 +46,9 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '17'
+
+      - name: Grant execute permissions for gradlew
+        run: chmod +x gradlew
 
       - name: Cache Gradle packages
         uses: actions/cache@v3
